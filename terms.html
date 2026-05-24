@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions — RosaTrade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #07090c;
+      --bg2:       #0b0f14;
+      --bg3:       #10161e;
+      --border:    #1a2535;
+      --border2:   #243348;
+      --green:     #00d68f;
+      --text:      #b8cce0;
+      --text-dim:  #526478;
+      --mono:      'Space Mono', monospace;
+      --sans:      'Sora', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(7,9,12,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: var(--mono); font-size: 1rem;
+      letter-spacing: 0.05em; text-decoration: none;
+    }
+    .logo-rosa { color: #fff; font-weight: 700; }
+    .logo-trade { color: var(--green); }
+    .nav-back {
+      font-family: var(--mono); font-size: 0.72rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-dim); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--green); }
+
+    /* HERO */
+    .page-hero {
+      padding: 8rem 3rem 4rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+    }
+    .page-label {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 0.7rem;
+    }
+    .page-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300; color: #fff;
+      letter-spacing: -0.02em; margin-bottom: 0.8rem;
+    }
+    .page-title strong { font-weight: 600; }
+    .page-meta {
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--text-dim); letter-spacing: 0.06em;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+
+    .toc {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    .toc-title {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 1.2rem;
+    }
+    .toc ol {
+      list-style: none; counter-reset: toc;
+    }
+    .toc ol li {
+      counter-increment: toc;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .toc ol li:last-child { border-bottom: none; }
+    .toc ol li::before {
+      content: counter(toc, decimal-leading-zero) '.  ';
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--text-dim); margin-right: 0.3rem;
+    }
+    .toc a {
+      color: var(--text); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--green); }
+
+    .section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 0.5rem;
+    }
+    .section h2 {
+      font-size: 1.2rem; font-weight: 600; color: #fff;
+      letter-spacing: -0.01em; margin-bottom: 1.2rem;
+    }
+    .section p {
+      font-size: 0.92rem; color: var(--text-dim);
+      line-height: 1.85; margin-bottom: 1rem;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul {
+      list-style: none; margin: 1rem 0;
+    }
+    .section ul li {
+      font-size: 0.9rem; color: var(--text-dim);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      position: relative; line-height: 1.7;
+      border-bottom: 1px solid var(--border);
+    }
+    .section ul li:last-child { border-bottom: none; }
+    .section ul li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--green); font-family: var(--mono);
+      font-size: 0.7rem; top: 0.55rem;
+    }
+
+    .highlight-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .warning-box {
+      background: rgba(255, 79, 109, 0.05);
+      border: 1px solid rgba(255, 79, 109, 0.2);
+      border-left: 3px solid #ff4f6d;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 3rem;
+      display: flex; justify-content: space-between;
+      align-items: center; font-size: 0.75rem;
+      color: var(--text-dim); flex-wrap: wrap; gap: 1rem;
+    }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--green); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .page-hero { padding: 7rem 1.5rem 3rem; }
+      .content { padding: 2.5rem 1.5rem 4rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-rosa">ROSA</span><span class="logo-trade">TRADE</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-label">Legal</div>
+  <h1 class="page-title">Terms &amp; <strong>Conditions</strong></h1>
+  <div class="page-meta">Last updated: May 2026 &nbsp;·&nbsp; RosaTrade &nbsp;·&nbsp; business@rosatradescripts.com</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1">Acceptance of Terms</a></li>
+      <li><a href="#s2">About RosaTrade</a></li>
+      <li><a href="#s3">Products and Licence Grant</a></li>
+      <li><a href="#s4">Intellectual Property</a></li>
+      <li><a href="#s5">No Refund Policy</a></li>
+      <li><a href="#s6">Risk Warning &amp; No Financial Advice</a></li>
+      <li><a href="#s7">Disclaimer of Warranties</a></li>
+      <li><a href="#s8">Limitation of Liability</a></li>
+      <li><a href="#s9">Platform Dependency</a></li>
+      <li><a href="#s10">Prohibited Use</a></li>
+      <li><a href="#s11">Governing Law</a></li>
+      <li><a href="#s12">Changes to These Terms</a></li>
+      <li><a href="#s13">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- S1 -->
+  <div class="section" id="s1">
+    <div class="section-num">01</div>
+    <h2>Acceptance of Terms</h2>
+    <p>By purchasing, downloading, or using any product sold by RosaTrade ("we", "us", "our"), you ("the buyer", "you") agree to be bound by these Terms and Conditions in full. If you do not agree with any part of these terms, you must not purchase or use our products.</p>
+    <p>These terms apply to all purchases made directly through RosaTrade, via our website at <strong>www.rosatradescripts.com</strong>, or through any authorised third-party marketplace on which RosaTrade products are listed.</p>
+  </div>
+
+  <!-- S2 -->
+  <div class="section" id="s2">
+    <div class="section-num">02</div>
+    <h2>About RosaTrade</h2>
+    <p>RosaTrade is a trading strategy development operation based in the United Kingdom. We develop and sell automated trading strategies ("scripts") coded for use with the ProRealTime platform on IG Markets spread-betting accounts.</p>
+    <p>Contact: <strong>business@rosatradescripts.com</strong></p>
+  </div>
+
+  <!-- S3 -->
+  <div class="section" id="s3">
+    <div class="section-num">03</div>
+    <h2>Products and Licence Grant</h2>
+    <p>Upon successful payment, RosaTrade grants the buyer a non-exclusive, non-transferable, single-user licence to use the purchased script for personal trading purposes only.</p>
+    <div class="highlight-box">
+      This licence is for <strong>one individual user on one account</strong>. It does not transfer ownership of the script or any part of its underlying intellectual property to the buyer.
+    </div>
+    <p>The licence includes:</p>
+    <ul>
+      <li>The ProRealTime script file (.prt or equivalent)</li>
+      <li>Basic setup and installation guidance</li>
+      <li>Access to the backtest data and performance reports provided at the time of sale</li>
+    </ul>
+    <p>The licence does not include managed account services, ongoing strategy modifications, or guaranteed performance of any kind.</p>
+  </div>
+
+  <!-- S4 -->
+  <div class="section" id="s4">
+    <div class="section-num">04</div>
+    <h2>Intellectual Property</h2>
+    <p>All scripts, code, strategy logic, documentation, and materials sold by RosaTrade remain the sole intellectual property of RosaTrade at all times. Purchase of a licence does not transfer any ownership rights to the buyer.</p>
+    <p>The buyer must not:</p>
+    <ul>
+      <li>Copy, reproduce, or distribute the script to any third party</li>
+      <li>Resell, sublicence, or commercially exploit the script in any form</li>
+      <li>Share login credentials or script files with other individuals or organisations</li>
+      <li>Reverse-engineer, decompile, or modify the script for redistribution</li>
+      <li>Use the script as the basis for a competing commercial product</li>
+    </ul>
+    <p>Any breach of these intellectual property terms will result in immediate termination of the licence and may give rise to legal action.</p>
+  </div>
+
+  <!-- S5 -->
+  <div class="section" id="s5">
+    <div class="section-num">05</div>
+    <h2>No Refund Policy</h2>
+    <div class="warning-box">
+      <strong>All sales are final.</strong> Due to the digital and immediately deliverable nature of our products, RosaTrade operates a strict no-refund policy. Once a script has been delivered, no refund will be issued under any circumstances.
+    </div>
+    <p>We strongly encourage all potential buyers to:</p>
+    <ul>
+      <li>Read all product descriptions, backtest reports, and performance data carefully before purchasing</li>
+      <li>Contact us at business@rosatradescripts.com with any questions prior to purchase</li>
+      <li>Ensure they have access to a compatible ProRealTime account on IG Markets before buying</li>
+    </ul>
+    <p>If you experience a technical issue with delivery of your script, please contact us and we will work to resolve it. Technical delivery issues do not constitute grounds for a refund but will be remedied promptly.</p>
+  </div>
+
+  <!-- S6 -->
+  <div class="section" id="s6">
+    <div class="section-num">06</div>
+    <h2>Risk Warning &amp; No Financial Advice</h2>
+    <div class="warning-box">
+      <strong>Spread betting and CFD trading carry a high level of risk to your capital. You can lose more than your initial deposit. These products may not be suitable for all investors.</strong>
+    </div>
+    <p>Nothing on this website or within any RosaTrade product constitutes financial advice, investment advice, or a recommendation to trade any financial instrument. RosaTrade is not authorised or regulated by the Financial Conduct Authority (FCA) or any other financial regulatory body.</p>
+    <p>All backtested performance data presented is historical. Past performance — whether backtested or live — is not indicative of future results. Backtested results are produced under simulated conditions and may not reflect actual trading outcomes due to factors including but not limited to:</p>
+    <ul>
+      <li>Slippage and execution delays in live markets</li>
+      <li>Changes in spread, commission, or market liquidity</li>
+      <li>Platform outages or connectivity issues</li>
+      <li>Changes to the underlying instrument or market conditions</li>
+    </ul>
+    <p>You should seek independent financial advice if you are unsure whether spread betting or automated trading is appropriate for your circumstances. Never trade with money you cannot afford to lose.</p>
+  </div>
+
+  <!-- S7 -->
+  <div class="section" id="s7">
+    <div class="section-num">07</div>
+    <h2>Disclaimer of Warranties</h2>
+    <p>RosaTrade scripts are provided "as is" without warranty of any kind, express or implied. We do not warrant that:</p>
+    <ul>
+      <li>The script will generate profits or meet any specific performance target</li>
+      <li>The script will operate without interruption or error</li>
+      <li>The script will remain compatible with future versions of ProRealTime or IG Markets</li>
+      <li>Any backtest results will be replicated in live trading</li>
+    </ul>
+    <p>The buyer assumes all risk associated with the use of RosaTrade scripts in live or simulated trading environments.</p>
+  </div>
+
+  <!-- S8 -->
+  <div class="section" id="s8">
+    <div class="section-num">08</div>
+    <h2>Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, RosaTrade shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from:</p>
+    <ul>
+      <li>Trading losses incurred through the use of any RosaTrade script</li>
+      <li>Errors, bugs, or unexpected behaviour in the script</li>
+      <li>Platform failures, connectivity issues, or broker-related problems</li>
+      <li>Any reliance placed on performance data, backtest results, or marketing materials</li>
+    </ul>
+    <p>In no event shall RosaTrade's total liability to you exceed the amount paid for the specific product giving rise to the claim.</p>
+  </div>
+
+  <!-- S9 -->
+  <div class="section" id="s9">
+    <div class="section-num">09</div>
+    <h2>Platform Dependency</h2>
+    <p>All RosaTrade scripts are developed exclusively for use with <strong>ProRealTime</strong> on <strong>IG Markets</strong> spread-betting accounts. The buyer is responsible for ensuring they have a valid, active ProRealTime account with IG Markets before purchasing.</p>
+    <p>RosaTrade accepts no responsibility for scripts that fail to function due to:</p>
+    <ul>
+      <li>Changes made by ProRealTime or IG Markets to their platform, API, or data feeds</li>
+      <li>Account restrictions, margin requirements, or broker policy changes</li>
+      <li>The buyer using incompatible software versions or account types</li>
+    </ul>
+    <p>RosaTrade will endeavour to notify buyers of any known compatibility issues but is under no obligation to update or modify scripts following platform changes.</p>
+  </div>
+
+  <!-- S10 -->
+  <div class="section" id="s10">
+    <div class="section-num">10</div>
+    <h2>Prohibited Use</h2>
+    <p>The buyer agrees not to use RosaTrade scripts for any purpose that is unlawful, fraudulent, or harmful. This includes but is not limited to:</p>
+    <ul>
+      <li>Market manipulation or any activity prohibited by applicable financial regulation</li>
+      <li>Use on managed accounts without the knowledge and consent of the account holder</li>
+      <li>Any activity that violates the terms of service of IG Markets or ProRealTime</li>
+      <li>Commercial redistribution of the script in any form</li>
+    </ul>
+  </div>
+
+  <!-- S11 -->
+  <div class="section" id="s11">
+    <div class="section-num">11</div>
+    <h2>Governing Law</h2>
+    <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of <strong>England and Wales</strong>. Any disputes arising out of or in connection with these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+  </div>
+
+  <!-- S12 -->
+  <div class="section" id="s12">
+    <div class="section-num">12</div>
+    <h2>Changes to These Terms</h2>
+    <p>RosaTrade reserves the right to update or amend these Terms and Conditions at any time. Changes will be published on this page with an updated date. Continued use of any RosaTrade product following any changes constitutes acceptance of the revised terms.</p>
+    <p>It is the buyer's responsibility to review these terms periodically.</p>
+  </div>
+
+  <!-- S13 -->
+  <div class="section" id="s13">
+    <div class="section-num">13</div>
+    <h2>Contact</h2>
+    <p>For any questions regarding these Terms and Conditions, or for pre-purchase enquiries, please contact:</p>
+    <div class="highlight-box">
+      <strong>RosaTrade</strong><br />
+      Email: <a href="mailto:business@rosatradescripts.com" style="color: var(--green); text-decoration: none;">business@rosatradescripts.com</a><br />
+      Website: <a href="https://www.rosatradescripts.com" style="color: var(--green); text-decoration: none;">www.rosatradescripts.com</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 RosaTrade. All rights reserved.</div>
+  <div><a href="index.html">← Back to Home</a></div>
+</footer>
+
+</body>
+</html>
